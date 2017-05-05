@@ -1,0 +1,38 @@
+
+:root {
+	margin: 50px;
+}
+
+.item {
+margin: 25px 0 20px 0;
+}
+
+.item > .title {
+font-size: medium;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.item > .description {
+font-size: small;
+}
+
+.item > .pubDate {
+font-size: small;
+}
+
+.feedflare, p:empty{
+	display:none !important;
+}
+
+li .fav_btn{
+	display:none !important;
+}
+span .fav_btn{
+	margin-left: 5px;
+}
+
+h2{
+	border-bottom: thin solid;
+}
+	
