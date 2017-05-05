@@ -192,7 +192,8 @@
 			
 				//Code that handles the hidding of feeds.
 				$("#rss_select").click(function(e) {
-					e.currentTarget.childNodes.forEach(function(val){
+					console.log(e);
+					e.currentTarget.childNodes[1].childNodes.forEach(function(val){
 						if(val.checked == false && val.value != "all"){
 							feeds_selected[val.value] = false;
 							$("input[value='all']")[0].checked = false;
@@ -201,17 +202,13 @@
 							feeds_selected[val.value] = true;
 						}
 					});
-					e.currentTarget.childNodes.forEach(function(val){
+					e.currentTarget.childNodes[1].childNodes.forEach(function(val){
 						if(val.type == "checkbox"){
 							if(feeds_selected[val.value] == false){
-								//$("#" + val.value).removeClass("show");
-								//$("#" + val.value).addClass("hide");
 								$("." + val.value).removeClass("show");
 								$("." + val.value).addClass("hide");
 							}
 							else{
-								//$("#" + val.value).removeClass("hide");
-								//$("#" + val.value).addClass("show");
 								$("." + val.value).removeClass("hide");
 								$("." + val.value).addClass("show");
 							}
@@ -220,7 +217,7 @@
 				});
 				$("input[value='all']").change(function(e) {
 					if(e.currentTarget.checked == false){
-						for(var i = 0; i <= 4; i++){
+						for(var i = 0; i <= 5; i++){
 							$("input[type='checkbox']")[i].checked = true;
 						}
 						$(".feed").removeClass("hide");
